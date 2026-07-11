@@ -2,47 +2,49 @@
 
 **Total: ~3:00 · ~450 spoken words · record voiceover over screen capture of the artifacts named in each row.**
 
-> Delivery notes: ~150 wpm, unhurried. The lead is the *L. iners* result — it overturns a textbook claim, so land it with confidence. Every number below is read straight from the saved GEE / bootstrap tables and the manuscript.
+> Delivery notes: ~150 wpm, unhurried. The arc is the story: *we built a rigorous classifier, got an honest negative, and that negative led us to a genuinely novel result.* Let the negative land — it earns the pivot. Every number is read straight from the saved LOSO / GEE / bootstrap tables.
 
 ---
 
-### 0:00–0:22 — HOOK  *(on screen: `fig_community_state_types.png`)*
+### 0:00–0:20 — HOOK: THE QUESTION  *(on screen: `figures/cst_valencia_concordance.png`)*
 
-"In the vaginal microbiome, health means one *Lactobacillus* species in charge. The textbook says *Lactobacillus iners* — community state type III — is the unstable stepping-stone: the state that hands you off toward dysbiosis, bacterial vaginosis, and everything that follows. We put that claim to the test on daily metagenomic data — and it doesn't hold."
+"In the vaginal microbiome, health means one *Lactobacillus* species in charge, and dysbiosis is when that control breaks down. The clinical dream is a baseline test: measure the community today, and predict who tips into dysbiosis tomorrow. We set out to build exactly that classifier — on real daily data, done honestly."
 
-### 0:22–0:48 — THE SETUP  *(on screen: `hero_transition_vs_onset.png` briefly, then dim)*
+### 0:20–0:52 — PART 1: THE CLASSIFIER  *(on screen: `figures/model_performance.png`)*
 
-"Public vaginal metagenomics with outcome labels is genuinely scarce, so we didn't overclaim. We used PRJEB37731 — a Danish cohort sampled *daily* by shotgun sequencing — called community states with VALENCIA, and asked one honest, well-powered question: from a baseline day, what does the community do tomorrow? Everything validated leave-one-subject-out, every inference subject-clustered."
+"We used PRJEB37731 — a Danish cohort sampled *daily* by shotgun sequencing — called community states with VALENCIA, and built a proper machine-learning pipeline: elastic net, random forest, and gradient boosting on 184 species, against honest baselines. Everything evaluated leave-one-subject-out, so no person appears in both training and test. Two targets: will the community transition tomorrow, and — the real question — will a non-dysbiotic day tip into dysbiosis?"
 
-### 0:48–1:20 — iners DRIVES MOVEMENT  *(on screen: `hero_iners_mobility.png`, panel A)*
+### 0:52–1:28 — THE HONEST NEGATIVE  *(on screen: `figures/hero_transition_vs_onset.png`)*
 
-"First result: *L. iners* is a strong, dose-graded marker of instability. The more iners at baseline, the more likely the community moves the next day — the odds ratio is nearly 6, p equals 2 times ten to the minus 8. This is the clearest signal in the whole project. So far, the textbook looks right: iners means an unstable community."
+"Here's what we found, and we're not going to dress it up. For *any* transition, the best model reaches an AUROC of 0.66 — but a simple baseline using just the current state matches it. The full microbiome adds essentially nothing. And for the target we actually cared about — new onset of dysbiosis — every model sits at chance. We even added up to five days of memory; it didn't help, and several configurations scored *below* chance. Next-day dysbiosis onset is simply not predictable from baseline composition here — and a power analysis confirms the null is real, not just small data."
 
-### 1:20–2:05 — BUT MOVEMENT ISN'T DECLINE  *(on screen: `hero_iners_mobility.png`, panel B)*
+### 1:28–1:52 — THE PIVOT  *(on screen: `figures/onset_history_depth.png`, then `figures/hero_iners_mobility.png` panel A)*
 
-"But here's the twist. When an iners community *does* move, where does it go? We built a competing-risks model separating *whether* it moves from *where* it goes. From an iners day, the community recovers upward to *L. crispatus* at a daily risk of 0.57 — and descends into dysbiosis at only 0.24. Recovery is about two-and-a-half times more likely than decline. And at daily resolution, CST III is *not* a preferential gateway to dysbiosis — that independence test comes back flat."
+"A negative result is still a result — if you ask what it's telling you. The one thing that *did* carry signal was *Lactobacillus iners*, community state III, the species the textbook calls the unstable stepping-stone to dysbiosis. So we chased it. And *iners* is a strong, dose-graded marker of instability — the more iners at baseline, the more the community moves the next day, odds ratio nearly 6, p equals 2 times ten to the minus 8."
 
-### 2:05–2:35 — THE REFRAME  *(on screen: `model_card.png`)*
+### 1:52–2:32 — THE NOVEL FINDING  *(on screen: `figures/hero_iners_mobility.png` panel B)*
 
-"So *L. iners* marks a community that moves — but the movement is mostly benign recovery, not a one-way slide into disease. And no feature we measured predicts which direction a mover takes; adding up to five days of history doesn't help either — the process is effectively memoryless. That reframes iners from a gateway to dysbiosis into a marker of mobility. It's a small but real correction to a widely repeated story."
+"But here's the twist that overturns the textbook. When an iners community moves — where does it go? We separated *whether* it moves from *where*. From an iners day, it recovers upward to *L. crispatus* at a daily risk of 0.57 — and descends into dysbiosis at only 0.24. Recovery beats decline two-and-a-half to one. And CST III is *not* a preferential gateway to dysbiosis — the independence test comes back flat. *iners* marks a community that moves, and the movement is mostly benign recovery."
 
-### 2:35–3:00 — CLOSE  *(on screen: `model_card.png` footer + title card)*
+### 2:32–3:00 — CLOSE  *(on screen: `figures/model_card.png`)*
 
-"Every input here is public, every step reproducible, built end-to-end on Claude Science — and we report the limits honestly: one cohort, no external validation yet. Give this pipeline a second cohort with intervention outcomes, and the same machinery goes after the real prize: predicting who responds to microbiome-directed therapy. Thanks for watching."
+"So we built the classifier, we reported the honest negative, and the negative led us somewhere new: *L. iners* is a marker of mobility, not decline — a small but real correction to a widely repeated story. Every input is public, every step reproducible, built end-to-end on Claude Science, one cohort with no external validation yet. Give this same pipeline a second cohort with intervention outcomes, and it goes after the real prize: predicting who responds to microbiome-directed therapy. Thanks for watching."
 
 ---
 
-## Frame / asset checklist (export before recording)
+## Frame / asset checklist (export before recording — all in `figures/`)
 
 | Beat | Artifact to show |
 |---|---|
-| Hook | `fig_community_state_types.png` |
-| Setup | `hero_transition_vs_onset.png` (brief) |
-| iners drives movement | `hero_iners_mobility.png` (panel A) |
-| Movement ≠ decline | `hero_iners_mobility.png` (panel B) |
-| Reframe | `model_card.png` |
-| Close | `model_card.png` footer + title card |
+| Hook: the question | `cst_valencia_concordance.png` |
+| Part 1: the classifier | `model_performance.png` |
+| The honest negative | `hero_transition_vs_onset.png` |
+| The pivot | `onset_history_depth.png` → `hero_iners_mobility.png` (panel A) |
+| The novel finding | `hero_iners_mobility.png` (panel B) |
+| Close | `model_card.png` |
 
-**Title-card text:** *"L. iners marks mobility, not decline — Built with Claude: Life Sciences."*
+**Title-card text:** *"A rigorous classifier, an honest negative, and the finding it uncovered — Built with Claude: Life Sciences."*
 
-**Key numbers (say these exactly):** movement OR **5.9** (3.2–10.9), p=2×10⁻⁸ · escape **0.57** vs descend **0.24** daily risk (~2.4×) · direction OR **0.40**, p=0.36 · gateway χ² p=**0.69** · transition AUROC **0.66**, onset ≈**0.51**.
+**Key numbers (say these exactly):** transition AUROC **0.66** (baseline matches it) · onset ≈ **0.51**, chance, and memory does not help · movement OR **5.9** (3.2–10.9), p=2×10⁻⁸ · escape **0.57** vs descend **0.24** daily risk (~2.4×) · gateway independence χ² p=**0.69**.
+
+**Word count:** ~460 spoken words ≈ 3:00 at 150 wpm.
