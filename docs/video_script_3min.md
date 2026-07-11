@@ -16,7 +16,7 @@
 
 ### 0:52–1:28 — THE HONEST NEGATIVE  *(on screen: `figures/hero_transition_vs_onset.png`)*
 
-"Here's what we found, and we're not going to dress it up. For *any* transition, the best model reaches an AUROC of 0.66 — but a simple baseline using just the current state matches it. The full microbiome adds essentially nothing. And for the target we actually cared about — new onset of dysbiosis — every model sits at chance. We even added up to five days of memory; it didn't help, and several configurations scored *below* chance. Next-day dysbiosis onset is simply not predictable from baseline composition here — and a power analysis confirms the null is real, not just small data."
+"Here's what we found, and we're not going to dress it up. For *any* transition, the best model reaches an AUROC of 0.66 — but a simple baseline using just the current state matches it. The full microbiome adds essentially nothing. And for the target we actually cared about — new onset of dysbiosis — every model sits at chance. We even added up to five days of memory; it didn't help, and several configurations scored *below* chance. Next-day dysbiosis onset is simply not predictable from baseline composition here — and a power analysis shows we could have detected any *large* compositional signal, so we're confident there isn't one, though small effects would need a bigger cohort."
 
 ### 1:28–1:52 — THE PIVOT  *(on screen: `figures/onset_history_depth.png`, then `figures/hero_iners_mobility.png` panel A)*
 
@@ -28,7 +28,7 @@
 
 ### 2:32–3:00 — CLOSE  *(on screen: `figures/model_card.png`)*
 
-"So we built the classifier, we reported the honest negative, and the negative led us somewhere new: *L. iners* is a marker of mobility, not decline — a small but real correction to a widely repeated story. Every input is public, every step reproducible, built end-to-end on Claude Science, one cohort with no external validation yet. Give this same pipeline a second cohort with intervention outcomes, and it goes after the real prize: predicting who responds to microbiome-directed therapy. Thanks for watching."
+"So we built the classifier, reported the honest negative, and the negative led us somewhere new: *L. iners* is a marker of mobility, not decline — a real correction to a widely repeated story. Every input is public, every step reproducible on Claude Science — one cohort, no external validation yet. Give this pipeline a second cohort with intervention outcomes, and it goes after the real prize: predicting who responds to microbiome-directed therapy. Thanks for watching."
 
 ---
 
