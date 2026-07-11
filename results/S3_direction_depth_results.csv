@@ -1,0 +1,5 @@
+task,model,k,n,n_escape,AUROC,AUROC_lo,AUROC_hi
+direction_escape_vs_descend,logit,0,146,102,0.4162,0.3167,0.5117
+direction_escape_vs_descend,logit,1,136,96,0.4755,0.376,0.5709
+direction_escape_vs_descend,logit,2,130,92,0.4723,0.3776,0.5747
+direction_escape_vs_descend,logit,3,124,87,0.5073,0.4043,0.6194

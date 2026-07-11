@@ -1,0 +1,3 @@
+sub,n_baselines,n_subjects,mean_iners,p_move,escape_share_movers,descend_share_movers
+III-A,101,38,0.835,0.812,0.688,0.312
+III-B,86,35,0.539,0.802,0.701,0.299

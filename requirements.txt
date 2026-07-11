@@ -1,0 +1,9 @@
+# Python 3.13 ; core analysis stack
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.4
+xgboost>=2.0
+statsmodels>=0.14
+matplotlib>=3.8
+pyarrow>=14.0

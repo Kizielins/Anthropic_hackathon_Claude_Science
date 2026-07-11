@@ -1,0 +1,4 @@
+test,statistic,dof,p,interpretation
+Full independence (next⊥current),6.54,9.0,0.685,Next-day state nearly independent of current state (near-memoryless at 1-day resolution)
+Gateway: P(next=IV) depends on current CST,2.07,3.0,0.557,P(→IV) does NOT differ by current CST
+CST III vs I → IV (Fisher),0.78,,0.213,CST III is NOT a stronger gateway to dysbiosis than CST I (OR 0.78)
