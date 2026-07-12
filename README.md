@@ -46,7 +46,7 @@ This project's real story is the **workflow**: Claude Science read the literatur
 | Stage | What happened | Artifact |
 |:--:|---|---|
 | **1 · Read the field** | Literature + landscape deep-dive (health, disease, treatment response, industry) | [`docs/`](docs/) |
-| **2 · Find the data** | **90** public datasets surveyed (43 shotgun, 37 amplicon, 10 other) | [`figures/vaginal_landscape.png`](figures/vaginal_landscape.png) |
+| **2 · Find the data** | **90** public datasets catalogued (43 shotgun · 37 amplicon · 6 WGA · 4 restricted) | [`data/vaginal_microbiome_datasets.csv`](data/vaginal_microbiome_datasets.csv) |
 | **3 · Recover labels** | **30** publications mined → **4** candidate targets scored on real label availability | [`figures/dataset_selection_funnel.png`](figures/dataset_selection_funnel.png) |
 | **4 · Select cohort** | **8** cohorts feasibility-vetted → only **PRJEB37731** turnkey (40 subj, daily shotgun) | [`DATA.md`](DATA.md) |
 | **5 · Build & test** | Leave-one-subject-out classifier, honest baselines → **honest negative** | [`figures/hero_transition_vs_onset.png`](figures/hero_transition_vs_onset.png) |

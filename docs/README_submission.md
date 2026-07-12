@@ -15,7 +15,7 @@ Before any modelling, the hard problem was **finding a dataset that could answer
 | Stage | What Claude Science did | Result |
 |---|---|---|
 | Read the field | Literature + landscape deep-dive across health, disease, treatment response, industry | Framed the prediction problem |
-| Find the data | Surveyed **90** public datasets | 43 shotgun · 37 amplicon · 10 other/restricted |
+| Find the data | Catalogued **90** public datasets (see `data/vaginal_microbiome_datasets.csv`) | 43 shotgun · 37 amplicon · 6 WGA · 4 controlled-access |
 | Recover labels | Mined **30** publications to recover outcome labels behind **4** candidate targets | Intervention-response labels were **not read-joinable**; preterm-birth cohorts are 16S V3–V4 (poor *iners*/*crispatus* resolution) |
 | Select cohort | Feasibility-vetted **8** candidate cohorts | Only **PRJEB37731** was turnkey: daily shotgun, 40 subjects, recoverable per-sample states |
 
