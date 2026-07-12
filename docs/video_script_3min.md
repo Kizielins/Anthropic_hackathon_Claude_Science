@@ -1,50 +1,56 @@
 # 3-Minute Video Script — Built with Claude: Life Sciences
 
-**Total: ~3:00 · ~450 spoken words · record voiceover over screen capture of the artifacts named in each row.**
+**Total: ~3:00 · ~478 spoken words · record voiceover over screen capture of the slides / figures named in each beat.**
 
-> Delivery notes: ~150 wpm, unhurried. The arc is the story: *we built a rigorous classifier, got an honest negative, and that negative led us to a genuinely novel result.* Let the negative land — it earns the pivot. Every number is read straight from the saved LOSO / GEE / bootstrap tables.
-
----
-
-### 0:00–0:20 — HOOK: THE QUESTION  *(on screen: `figures/cst_valencia_concordance.png`)*
-
-"In the vaginal microbiome, health means one *Lactobacillus* species in charge, and dysbiosis is when that control breaks down. The clinical dream is a baseline test: measure the community today, and predict who tips into dysbiosis tomorrow. We set out to build exactly that classifier — on real daily data, done honestly."
-
-### 0:20–0:52 — PART 1: THE CLASSIFIER  *(on screen: `figures/model_performance.png`)*
-
-"We used PRJEB37731 — a Danish cohort sampled *daily* by shotgun sequencing — called community states with VALENCIA, and built a proper machine-learning pipeline: elastic net, random forest, and gradient boosting on 184 species, against honest baselines. Everything evaluated leave-one-subject-out, so no person appears in both training and test. Two targets: will the community transition tomorrow, and — the real question — will a non-dysbiotic day tip into dysbiosis?"
-
-### 0:52–1:28 — THE HONEST NEGATIVE  *(on screen: `figures/hero_transition_vs_onset.png`)*
-
-"Here's what we found, and we're not going to dress it up. For *any* transition, the best model reaches an AUROC of 0.66 — but a simple baseline using just the current state matches it. The full microbiome adds essentially nothing. And for the target we actually cared about — new onset of dysbiosis — every model sits at chance. We even added up to five days of memory; it didn't help, and several configurations scored *below* chance. Next-day dysbiosis onset is simply not predictable from baseline composition here — and a power analysis shows we could have detected any *large* compositional signal, so we're confident there isn't one, though small effects would need a bigger cohort."
-
-### 1:28–1:52 — THE PIVOT  *(on screen: `figures/onset_history_depth.png`, then `figures/hero_iners_mobility.png` panel A)*
-
-"A negative result is still a result — if you ask what it's telling you. The one thing that *did* carry signal was *Lactobacillus iners*, community state III, the species the textbook calls the unstable stepping-stone to dysbiosis. So we chased it. And *iners* is a strong, dose-graded marker of instability — the more iners at baseline, the more the community moves the next day, odds ratio nearly 6, p equals 2 times ten to the minus 8."
-
-### 1:52–2:32 — THE NOVEL FINDING  *(on screen: `figures/hero_iners_mobility.png` panel B)*
-
-"But here's the twist that overturns the textbook. When an iners community moves — where does it go? We separated *whether* it moves from *where*. From an iners day, it recovers upward to *L. crispatus* at a daily risk of 0.57 — and descends into dysbiosis at only 0.24. Recovery beats decline two-and-a-half to one. And CST III is *not* a preferential gateway to dysbiosis — the independence test comes back flat. *iners* marks a community that moves, and the movement is mostly benign recovery."
-
-### 2:32–3:00 — CLOSE  *(on screen: `figures/model_card.png`)*
-
-"So we built the classifier, reported the honest negative, and the negative led us somewhere new: *L. iners* is a marker of mobility, not decline — a real correction to a widely repeated story. Every input is public, every step reproducible on Claude Science — one cohort, no external validation yet. Give this pipeline a second cohort with intervention outcomes, and it goes after the real prize: predicting who responds to microbiome-directed therapy. Thanks for watching."
+> Framing: the story is **how we used Claude Science to run the entire discovery** — literature search, dataset identification, hypothesis formation — and how that pipeline led to the findings, especially the novel one. The model is evidence the workflow works, not the headline. ~160 wpm lands ≈ 2:59. Every number is real, pulled from this project's own survey / publication-mining / results artifacts.
 
 ---
 
-## Frame / asset checklist (export before recording — all in `figures/`)
+### 0:00 — TITLE CARD  *(hold ~3s)*
+
+"A workflow story: how Claude Science ran the whole discovery."
+
+---
+
+### 0:00–0:22 — THE CHALLENGE  *(on screen: `figures/vaginal_landscape.png`)*
+
+"Human vaginal-microbiome data is scarce, scattered across archives, and the outcome labels you'd actually want to predict usually live buried in the papers, not in the data records. So our project wasn't just to build a model — it was to see whether Claude Science could run the *entire* discovery pipeline: read the field, find the data, form a hypothesis, and take it all the way to a novel finding."
+
+### 0:22–0:52 — CLAUDE SCIENCE READ THE FIELD & FOUND THE DATA  *(on screen: `figures/claude_science_workflow.png`)*
+
+"First, Claude Science read the field for us — a full literature and landscape deep-dive across health, disease, and treatment response. Then it went looking for data, surveying ninety public datasets: forty-three shotgun-metagenomic, thirty-seven amplicon, the rest whole-genome-amplified or restricted. All of this ran inside a single reproducible thread — this diagram is the whole pipeline, six stages from reading the literature to the finding we'll end on."
+
+### 0:52–1:24 — IT RECOVERED THE HIDDEN LABELS & PICKED THE COHORT  *(on screen: `figures/dataset_selection_funnel.png`)*
+
+"The catch: the archives don't expose the labels you need. So Claude Science mined the literature — reading thirty publications to recover outcome labels and score four candidate prediction targets on what was *actually* available. It vetted eight cohorts for feasibility, and only one was turnkey: PRJEB37731, a Danish cohort of forty women sampled daily by shotgun sequencing. That dataset selection — matching a question to the one dataset that could answer it — was the pivotal move, and Claude Science did it end to end."
+
+### 1:24–1:52 — IT BUILT THE CLASSIFIER — AND REPORTED AN HONEST NEGATIVE  *(on screen: `figures/hero_transition_vs_onset.png`)*
+
+"Then it built the classifier — elastic net, random forest, gradient boosting, all evaluated leave-one-subject-out so no person leaks between train and test. And it reported the result honestly, even though the result was negative: the microbiome composition adds essentially nothing beyond the current state, and predicting who newly tips into dysbiosis comes out at chance. Claude Science even tested adding five days of memory. It didn't help."
+
+### 1:52–2:28 — THE NEGATIVE LED IT TO FORM A NEW HYPOTHESIS — THE NOVEL FINDING  *(on screen: `figures/hero_iners_mobility.png`)*
+
+"But a negative result is a clue if you ask what it's telling you — and here's where it gets interesting. Claude Science flagged the one thing carrying signal, Lactobacillus iners, and formed a testable hypothesis about it. iners strongly predicts that the community will move — odds ratio near six. But when we asked *where* it moves, the textbook flips: from an iners day, the community recovers toward health at nearly two-and-a-half times the rate it declines into dysbiosis. iners marks mobility, not decline — a genuinely novel correction, reached because the platform followed the negative instead of hiding it."
+
+### 2:28–3:00 — WHAT CLAUDE SCIENCE ENABLED  *(on screen: `figures/model_card.png`)*
+
+"So the story here isn't really the model — it's the workflow. Claude Science read the literature, found and vetted the data, recovered the hidden labels, built and honestly tested the classifier, and then turned the negative into a novel finding — all in one reproducible thread on public data. Give that same pipeline a cohort with intervention outcomes, and it goes after the real prize: predicting who responds to microbiome-directed therapy. Thanks for watching."
+
+---
+
+## Frame / asset checklist (all in `figures/`)
 
 | Beat | Artifact to show |
 |---|---|
-| Hook: the question | `cst_valencia_concordance.png` |
-| Part 1: the classifier | `model_performance.png` |
-| The honest negative | `hero_transition_vs_onset.png` |
-| The pivot | `onset_history_depth.png` → `hero_iners_mobility.png` (panel A) |
-| The novel finding | `hero_iners_mobility.png` (panel B) |
-| Close | `model_card.png` |
+| The challenge | `vaginal_landscape.png` |
+| Claude Science read the field & found the data | `claude_science_workflow.png` |
+| It recovered the hidden labels & picked the cohort | `dataset_selection_funnel.png` |
+| It built the classifier — and reported an honest negative | `hero_transition_vs_onset.png` |
+| The negative led it to form a new hypothesis — the novel finding | `hero_iners_mobility.png` |
+| What Claude Science enabled | `model_card.png` |
 
-**Title-card text:** *"A rigorous classifier, an honest negative, and the finding it uncovered — Built with Claude: Life Sciences."*
+**Title-card text:** *"A workflow story: how Claude Science ran the whole discovery — Built with Claude: Life Sciences."*
 
-**Key numbers (say these exactly):** transition AUROC **0.66** (baseline matches it) · onset ≈ **0.51**, chance, and memory does not help · movement OR **5.9** (3.2–10.9), p=2×10⁻⁸ · escape **0.57** vs descend **0.24** daily risk (~2.4×) · gateway independence χ² p=**0.69**.
+**Workflow numbers to nail (all real):** 90 datasets surveyed · 30 publications mined · 4 targets scored · 8 cohorts vetted → 1 turnkey (PRJEB37731) · onset ≈ chance, memory doesn't help · movement OR ≈ 6 · recovery 0.57 vs descent 0.24 (~2.4×).
 
-**Word count:** ~460 spoken words ≈ 3:00 at 150 wpm.
+**Word count:** ~478 spoken words ≈ 2:59 at 160 wpm. Do a timed read-through; trim the two longest beats (Recover-labels, Novel-finding) if you run over.
